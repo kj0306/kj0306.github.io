@@ -3,9 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Kathy Jessica Paul - Data Science Portfolio | ML Engineer | AI Specialist">
+    <meta name="description" content="Kathy Jessica Paul - Data Scientist | ML Engineer | AI Specialist | Business Intelligence">
     <title>Kathy Jessica Paul | Data Science Portfolio</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
@@ -32,11 +35,23 @@
 
     <!-- Hero Section -->
     <section id="home" class="hero">
+        <div class="hero-noise"></div>
         <div class="hero-container">
             <div class="hero-content fade-in">
-                <h1 class="hero-title">Hi, I'm <span class="gradient-text">Kathy Jessica Paul</span></h1>
-                <p class="hero-subtitle">Data Scientist | ML Engineer | AI Specialist</p>
-                <p class="hero-description">Masters in Data Science @ University of Wisconsin-Madison</p>
+                <p class="hero-eyebrow">Hello, I'm</p>
+                <h1 class="hero-title">Kathy Jessica<br><em>Paul</em></h1>
+                <div class="hero-roles-wrapper">
+                    <div class="hero-roles-inner">
+                        <span class="role-chip">Data Scientist</span>
+                        <span class="role-divider">·</span>
+                        <span class="role-chip">ML Engineer</span>
+                        <span class="role-divider">·</span>
+                        <span class="role-chip">AI Specialist</span>
+                        <span class="role-divider">·</span>
+                        <span class="role-chip highlight">Business Intelligence</span>
+                    </div>
+                </div>
+                <p class="hero-description">Masters in Data Science &nbsp;·&nbsp; University of Wisconsin–Madison</p>
                 <div class="hero-buttons">
                     <a href="#projects" class="btn btn-primary">View My Work</a>
                     <a href="#contact" class="btn btn-secondary">Get In Touch</a>
@@ -47,9 +62,109 @@
                     <a href="mailto:kathy.jessica2000@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
                 </div>
             </div>
-            <div class="hero-image fade-in-delay">
-                <div class="floating-card">
-                    <i class="fas fa-brain gradient-icon"></i>
+
+            <!-- Hobby Bento Gallery -->
+            <div class="hero-gallery fade-in-delay">
+                <p class="gallery-label">Life Beyond the Terminal</p>
+                <div class="hobby-bento">
+                    <!-- Hiking -->
+                    <div class="hobby-card hiking">
+                        <div class="hobby-art">
+                            <div class="h-sky"></div>
+                            <svg class="h-scene" viewBox="0 0 200 120" preserveAspectRatio="xMidYMax meet">
+                                <polygon points="0,120 60,30 120,120" fill="#2D5016" opacity="0.9"/>
+                                <polygon points="40,120 110,20 180,120" fill="#3A6B1E" opacity="0.85"/>
+                                <polygon points="90,120 150,45 210,120" fill="#1E3D0A" opacity="0.95"/>
+                                <circle cx="155" cy="28" r="14" fill="#FFD166" opacity="0.9"/>
+                            </svg>
+                        </div>
+                        <div class="hobby-label">
+                            <span class="hobby-emoji">🥾</span>
+                            <span class="hobby-name">Hiking</span>
+                        </div>
+                    </div>
+
+                    <!-- Skiing -->
+                    <div class="hobby-card skiing">
+                        <div class="hobby-art">
+                            <div class="ski-sky"></div>
+                            <svg class="h-scene" viewBox="0 0 200 120" preserveAspectRatio="xMidYMax meet">
+                                <path d="M0,40 Q50,10 100,30 Q150,50 200,15 L200,120 L0,120 Z" fill="#E8F4FD" opacity="0.8"/>
+                                <path d="M0,70 Q70,50 140,65 Q170,72 200,55 L200,120 L0,120 Z" fill="white" opacity="0.7"/>
+                                <circle cx="30" cy="20" r="5" fill="white" opacity="0.7"/>
+                                <circle cx="80" cy="10" r="4" fill="white" opacity="0.6"/>
+                                <circle cx="140" cy="18" r="6" fill="white" opacity="0.7"/>
+                                <circle cx="175" cy="8" r="4" fill="white" opacity="0.5"/>
+                            </svg>
+                        </div>
+                        <div class="hobby-label">
+                            <span class="hobby-emoji">⛷️</span>
+                            <span class="hobby-name">Skiing</span>
+                        </div>
+                    </div>
+
+                    <!-- Dancing -->
+                    <div class="hobby-card dancing">
+                        <div class="hobby-art">
+                            <svg class="h-scene dance-scene" viewBox="0 0 200 120" preserveAspectRatio="xMidYMid meet">
+                                <ellipse cx="100" cy="110" rx="80" ry="20" fill="rgba(255,255,255,0.1)"/>
+                                <path d="M30,80 Q60,20 100,60 Q140,100 170,30" stroke="rgba(255,255,255,0.4)" fill="none" stroke-width="2" stroke-dasharray="6,4"/>
+                                <path d="M60,90 Q90,30 130,70 Q160,90 180,40" stroke="rgba(255,255,255,0.3)" fill="none" stroke-width="1.5" stroke-dasharray="4,6"/>
+                                <circle cx="100" cy="35" r="10" fill="rgba(255,255,255,0.9)"/>
+                                <line x1="100" y1="45" x2="100" y2="75" stroke="rgba(255,255,255,0.8)" stroke-width="2.5"/>
+                                <line x1="100" y1="55" x2="85" y2="65" stroke="rgba(255,255,255,0.8)" stroke-width="2"/>
+                                <line x1="100" y1="55" x2="115" y2="60" stroke="rgba(255,255,255,0.8)" stroke-width="2"/>
+                                <line x1="100" y1="75" x2="90" y2="95" stroke="rgba(255,255,255,0.8)" stroke-width="2.5"/>
+                                <line x1="100" y1="75" x2="112" y2="93" stroke="rgba(255,255,255,0.8)" stroke-width="2.5"/>
+                            </svg>
+                        </div>
+                        <div class="hobby-label">
+                            <span class="hobby-emoji">💃</span>
+                            <span class="hobby-name">Dancing</span>
+                        </div>
+                    </div>
+
+                    <!-- Travelling -->
+                    <div class="hobby-card travelling">
+                        <div class="hobby-art">
+                            <svg class="h-scene" viewBox="0 0 200 120" preserveAspectRatio="xMidYMid meet">
+                                <circle cx="100" cy="60" r="45" fill="none" stroke="rgba(255,255,255,0.25)" stroke-width="1"/>
+                                <ellipse cx="100" cy="60" rx="20" ry="45" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
+                                <line x1="55" y1="60" x2="145" y2="60" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
+                                <line x1="60" y1="38" x2="140" y2="38" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
+                                <line x1="60" y1="82" x2="140" y2="82" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
+                                <path d="M50,45 Q80,25 130,50 Q160,65 155,80" stroke="#FFD166" fill="none" stroke-width="2" stroke-dasharray="5,3"/>
+                                <circle cx="50" cy="45" r="4" fill="#FFD166"/>
+                                <circle cx="155" cy="80" r="4" fill="#FFD166"/>
+                                <text x="100" y="115" text-anchor="middle" fill="rgba(255,255,255,0.5)" font-size="9" font-family="DM Sans, sans-serif">EXPLORE THE WORLD</text>
+                            </svg>
+                        </div>
+                        <div class="hobby-label">
+                            <span class="hobby-emoji">✈️</span>
+                            <span class="hobby-name">Travelling</span>
+                        </div>
+                    </div>
+
+                    <!-- Working / Building -->
+                    <div class="hobby-card working">
+                        <div class="hobby-art">
+                            <svg class="h-scene" viewBox="0 0 200 120" preserveAspectRatio="xMidYMid meet">
+                                <rect x="30" y="20" width="140" height="85" rx="6" fill="rgba(0,0,0,0.5)"/>
+                                <rect x="34" y="24" width="132" height="77" rx="4" fill="#0A0F1A"/>
+                                <text x="44" y="42" fill="#C8963E" font-family="monospace" font-size="8">$ python train.py</text>
+                                <text x="44" y="54" fill="#4EC9B0" font-family="monospace" font-size="8">Epoch 12/50...</text>
+                                <text x="44" y="66" fill="#9CDCFE" font-family="monospace" font-size="8">accuracy: 97.4%</text>
+                                <text x="44" y="78" fill="#6A9955" font-family="monospace" font-size="8">✓ Model saved</text>
+                                <rect x="44" y="84" width="4" height="10" fill="#C8963E"/>
+                                <line x1="70" y1="108" x2="130" y2="108" stroke="rgba(255,255,255,0.3)" stroke-width="3" stroke-linecap="round"/>
+                                <rect x="75" y="104" width="50" height="4" rx="2" fill="rgba(255,255,255,0.15)"/>
+                            </svg>
+                        </div>
+                        <div class="hobby-label">
+                            <span class="hobby-emoji">💻</span>
+                            <span class="hobby-name">Building & Creating</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -74,7 +189,7 @@
                             </div>
                             <h3>MS in Data Science</h3>
                             <p class="institution">University of Wisconsin-Madison</p>
-                            <p class="details">GPA: 3.6/4 | Expected May 2026</p>
+                            <p class="details">GPA: 3.6/4 &nbsp;·&nbsp; Expected May 2026</p>
                             <p class="coursework">ML, Deep Learning, GenAI, Big Data Systems, Statistical Models</p>
                         </div>
                         <div class="education-card">
@@ -83,8 +198,8 @@
                             </div>
                             <h3>BE in Biomedical Engineering</h3>
                             <p class="institution">PSG College of Technology, India</p>
-                            <p class="details">GPA: 9.12/10 | May 2022</p>
-                            <p class="coursework">President - Entrepreneur's Club</p>
+                            <p class="details">GPA: 9.12/10 &nbsp;·&nbsp; May 2022</p>
+                            <p class="coursework">President — Entrepreneur's Club</p>
                         </div>
                     </div>
 
@@ -107,25 +222,29 @@
         <div class="container">
             <h2 class="section-title">Work Experience</h2>
             <div class="timeline">
+
                 <div class="timeline-item">
                     <div class="timeline-dot"></div>
                     <div class="timeline-content">
+                        <div class="company-logo-wrap">
+                            <svg class="company-svg amazon-svg" viewBox="0 0 140 38" xmlns="http://www.w3.org/2000/svg">
+                                <text x="2" y="28" font-family="Georgia, serif" font-size="28" font-weight="bold" fill="#FF9900" letter-spacing="-0.5">amazon</text>
+                                <path d="M14 35 Q70 44 116 33" stroke="#FF9900" fill="none" stroke-width="2.5" stroke-linecap="round"/>
+                                <polygon points="113,30 119,33 113,36" fill="#FF9900"/>
+                            </svg>
+                        </div>
                         <div class="timeline-header">
                             <h3>Business Intelligence Engineer</h3>
-                            <span class="company"><i class="fab fa-amazon"></i> Amazon</span>
+                            <span class="timeline-location"><i class="fas fa-map-marker-alt"></i> Seattle, WA</span>
                         </div>
-                        <p class="timeline-date"><i class="far fa-calendar"></i> Aug 2025 - Nov 2025 | Seattle, WA</p>
+                        <p class="timeline-date"><i class="far fa-calendar-alt"></i> Aug 2025 – Nov 2025</p>
                         <ul class="timeline-list">
-                            <li>Developed full-stack self-serve analytics platform with <strong>AWS Bedrock</strong> for NL to SQL conversion</li>
+                            <li>Developed full-stack self-serve analytics platform with <strong>AWS Bedrock</strong> for natural language to SQL conversion</li>
                             <li>Deployed scalable infrastructure using <strong>ECS Fargate</strong>, CloudFront, WAF, and AWS CDK</li>
                             <li>Built automated data pipelines with Lambda, DynamoDB, and Athena integration</li>
                         </ul>
                         <div class="tech-tags">
-                            <span>AWS Bedrock</span>
-                            <span>ECS Fargate</span>
-                            <span>Lambda</span>
-                            <span>DynamoDB</span>
-                            <span>Athena</span>
+                            <span>AWS Bedrock</span><span>ECS Fargate</span><span>Lambda</span><span>DynamoDB</span><span>Athena</span>
                         </div>
                     </div>
                 </div>
@@ -133,22 +252,26 @@
                 <div class="timeline-item">
                     <div class="timeline-dot"></div>
                     <div class="timeline-content">
-                        <div class="timeline-header">
-                            <h3>Analytics Engineer</h3>
-                            <span class="company"><i class="fas fa-shopping-cart"></i> Fetch Rewards</span>
+                        <div class="company-logo-wrap">
+                            <svg class="company-svg fetch-svg" viewBox="0 0 130 38" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="18" cy="19" r="14" fill="#E8622A"/>
+                                <text x="12" y="24" font-family="Arial" font-size="16" font-weight="bold" fill="white">F</text>
+                                <text x="38" y="26" font-family="Georgia, serif" font-size="22" font-weight="bold" fill="#E8622A">Fetch</text>
+                                <text x="38" y="36" font-family="Arial" font-size="9" fill="#E8622A" letter-spacing="1">REWARDS</text>
+                            </svg>
                         </div>
-                        <p class="timeline-date"><i class="far fa-calendar"></i> May 2025 - Aug 2025 | Madison, WI</p>
+                        <div class="timeline-header">
+                            <h3>Analytics Engineer Intern</h3>
+                            <span class="timeline-location"><i class="fas fa-map-marker-alt"></i> Madison, WI</span>
+                        </div>
+                        <p class="timeline-date"><i class="far fa-calendar-alt"></i> May 2025 – Aug 2025</p>
                         <ul class="timeline-list">
                             <li>Built AI-powered Streamlit app with <strong>Snowflake</strong>, reducing analysis time by <strong>40%</strong></li>
                             <li>Designed telemetry pipelines with <strong>DBT</strong> models and Grafana dashboards</li>
-                            <li><strong>Hackathon Winner:</strong> Built SlackQL - conversational analytics AI agent using n8n and Pinecone</li>
+                            <li><strong>🏆 Hackathon Winner:</strong> Built SlackQL — conversational analytics AI agent using n8n and Pinecone</li>
                         </ul>
                         <div class="tech-tags">
-                            <span>Snowflake</span>
-                            <span>DBT</span>
-                            <span>Grafana</span>
-                            <span>n8n</span>
-                            <span>Pinecone</span>
+                            <span>Snowflake</span><span>DBT</span><span>Grafana</span><span>n8n</span><span>Pinecone</span>
                         </div>
                     </div>
                 </div>
@@ -156,23 +279,28 @@
                 <div class="timeline-item">
                     <div class="timeline-dot"></div>
                     <div class="timeline-content">
+                        <div class="company-logo-wrap">
+                            <svg class="company-svg wipro-svg" viewBox="0 0 130 38" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="12" cy="19" r="7" fill="none" stroke="#341c78" stroke-width="2.5"/>
+                                <circle cx="12" cy="19" r="3.5" fill="#00a0e3"/>
+                                <circle cx="24" cy="19" r="7" fill="none" stroke="#00a0e3" stroke-width="2.5"/>
+                                <circle cx="24" cy="19" r="3.5" fill="#341c78"/>
+                                <text x="38" y="26" font-family="Georgia, serif" font-size="22" font-weight="bold" fill="#341c78">Wipro</text>
+                            </svg>
+                        </div>
                         <div class="timeline-header">
                             <h3>L2 Data Scientist</h3>
-                            <span class="company"><i class="fas fa-building"></i> Wipro Limited</span>
+                            <span class="timeline-location"><i class="fas fa-map-marker-alt"></i> Bengaluru, India</span>
                         </div>
-                        <p class="timeline-date"><i class="far fa-calendar"></i> Oct 2022 - Aug 2024 | Bengaluru, India</p>
+                        <p class="timeline-date"><i class="far fa-calendar-alt"></i> Oct 2022 – Aug 2024</p>
                         <ul class="timeline-list">
                             <li>Time series forecasting with <strong>97% accuracy</strong> using ML and Transformer models</li>
                             <li>Built RAG pipeline using <strong>LLaMA2</strong>, LangChain, and Pinecone</li>
                             <li>Developed Azure Functions in C# for data migration workflows</li>
-                            <li><strong>Award:</strong> Prodigy title at Wipro's All Hands Meet</li>
+                            <li><strong>🏆 Award:</strong> Prodigy title at Wipro's All Hands Meet</li>
                         </ul>
                         <div class="tech-tags">
-                            <span>PyTorch</span>
-                            <span>LLaMA2</span>
-                            <span>LangChain</span>
-                            <span>Azure</span>
-                            <span>Informatica</span>
+                            <span>PyTorch</span><span>LLaMA2</span><span>LangChain</span><span>Azure</span><span>Informatica</span>
                         </div>
                     </div>
                 </div>
@@ -185,7 +313,6 @@
         <div class="container">
             <h2 class="section-title">Featured Projects</h2>
             <div class="projects-grid">
-                <!-- Project 1: SellOWL -->
                 <div class="project-card">
                     <div class="project-image">
                         <div class="project-overlay">
@@ -194,8 +321,8 @@
                         <div class="project-icon">🦉</div>
                     </div>
                     <div class="project-content">
-                        <h3>SellOWL - Student Marketplace</h3>
-                        <p>Full-stack student-exclusive marketplace platform with AI-powered features for buying/selling products and subleasing.</p>
+                        <h3>SellOWL — Student Marketplace</h3>
+                        <p>Full-stack student-exclusive marketplace with AI-powered listing features for buying/selling products and subleasing.</p>
                         <ul class="project-features">
                             <li><i class="fas fa-check"></i> Student authentication with .edu verification</li>
                             <li><i class="fas fa-check"></i> Real-time messaging system</li>
@@ -203,11 +330,7 @@
                             <li><i class="fas fa-check"></i> Sublease module with map integration</li>
                         </ul>
                         <div class="project-tech">
-                            <span>React</span>
-                            <span>Flask</span>
-                            <span>PostgreSQL</span>
-                            <span>Firebase</span>
-                            <span>AWS S3</span>
+                            <span>React</span><span>Flask</span><span>PostgreSQL</span><span>Firebase</span><span>AWS S3</span>
                         </div>
                         <div class="project-links">
                             <a href="https://github.com/kj0306/sellowl" target="_blank" class="btn-small"><i class="fab fa-github"></i> Code</a>
@@ -215,7 +338,6 @@
                     </div>
                 </div>
 
-                <!-- Project 2: SlackQL -->
                 <div class="project-card">
                     <div class="project-image">
                         <div class="project-overlay">
@@ -224,7 +346,7 @@
                         <div class="project-icon">🚀</div>
                     </div>
                     <div class="project-content">
-                        <h3>SlackQL - AI SQL Agent</h3>
+                        <h3>SlackQL — AI SQL Agent</h3>
                         <p>Hackathon-winning conversational AI agent that transforms natural language questions into Snowflake SQL queries via Slack.</p>
                         <ul class="project-features">
                             <li><i class="fas fa-check"></i> Natural language to SQL conversion</li>
@@ -233,11 +355,7 @@
                             <li><i class="fas fa-check"></i> Real-time query execution & results</li>
                         </ul>
                         <div class="project-tech">
-                            <span>n8n</span>
-                            <span>Snowflake</span>
-                            <span>Pinecone</span>
-                            <span>OpenAI</span>
-                            <span>Slack API</span>
+                            <span>n8n</span><span>Snowflake</span><span>Pinecone</span><span>OpenAI</span><span>Slack API</span>
                         </div>
                         <div class="project-links">
                             <a href="https://github.com/kj0306/SlackQL_N8N_Workflow" target="_blank" class="btn-small"><i class="fab fa-github"></i> Code</a>
@@ -245,7 +363,6 @@
                     </div>
                 </div>
 
-                <!-- Project 3: Computer Vision -->
                 <div class="project-card">
                     <div class="project-image">
                         <div class="project-overlay">
@@ -260,14 +377,10 @@
                             <li><i class="fas fa-check"></i> YOLOv8 & Faster R-CNN models</li>
                             <li><i class="fas fa-check"></i> 7 particle class detection</li>
                             <li><i class="fas fa-check"></i> 5,376 annotated images dataset</li>
-                            <li><i class="fas fa-check"></i> IoU > 0.7 performance</li>
+                            <li><i class="fas fa-check"></i> IoU &gt; 0.7 performance</li>
                         </ul>
                         <div class="project-tech">
-                            <span>PyTorch</span>
-                            <span>YOLOv8</span>
-                            <span>Faster R-CNN</span>
-                            <span>Roboflow</span>
-                            <span>OpenCV</span>
+                            <span>PyTorch</span><span>YOLOv8</span><span>Faster R-CNN</span><span>Roboflow</span><span>OpenCV</span>
                         </div>
                         <div class="project-links">
                             <a href="https://github.com/kj0306/ComputerVision" target="_blank" class="btn-small"><i class="fab fa-github"></i> Code</a>
@@ -275,7 +388,6 @@
                     </div>
                 </div>
 
-                <!-- Project 4: Time Transformer -->
                 <div class="project-card">
                     <div class="project-image">
                         <div class="project-overlay">
@@ -293,10 +405,7 @@
                             <li><i class="fas fa-check"></i> TensorBoard integration</li>
                         </ul>
                         <div class="project-tech">
-                            <span>PyTorch Lightning</span>
-                            <span>Transformers</span>
-                            <span>TensorBoard</span>
-                            <span>Time Series</span>
+                            <span>PyTorch Lightning</span><span>Transformers</span><span>TensorBoard</span><span>Time Series</span>
                         </div>
                         <div class="project-links">
                             <a href="https://github.com/kj0306/Time_Transformer_Forecasting" target="_blank" class="btn-small"><i class="fab fa-github"></i> Code</a>
@@ -307,91 +416,84 @@
         </div>
     </section>
 
-    <!-- Skills Section -->
+    <!-- Skills Section — Interactive Dashboard -->
     <section id="skills" class="skills section">
         <div class="container">
             <h2 class="section-title">Technical Skills</h2>
-            <div class="skills-container">
-                <div class="skill-category">
-                    <div class="skill-header">
-                        <i class="fas fa-code"></i>
-                        <h3>Programming Languages</h3>
+            <div class="skills-dashboard">
+                <!-- Left: Tabs + Bars -->
+                <div class="skills-left">
+                    <div class="skill-tabs" role="tablist">
+                        <button class="skill-tab active" data-category="languages" role="tab" aria-selected="true">
+                            <i class="fas fa-code"></i><span>Languages</span>
+                        </button>
+                        <button class="skill-tab" data-category="aiml" role="tab">
+                            <i class="fas fa-brain"></i><span>AI / ML</span>
+                        </button>
+                        <button class="skill-tab" data-category="dataeng" role="tab">
+                            <i class="fas fa-database"></i><span>Data Eng</span>
+                        </button>
+                        <button class="skill-tab" data-category="cloud" role="tab">
+                            <i class="fas fa-cloud"></i><span>Cloud & DevOps</span>
+                        </button>
+                        <button class="skill-tab" data-category="analytics" role="tab">
+                            <i class="fas fa-chart-bar"></i><span>Analytics</span>
+                        </button>
                     </div>
-                    <div class="skill-tags">
-                        <span class="skill-tag">Python</span>
-                        <span class="skill-tag">SQL</span>
-                        <span class="skill-tag">C/C++</span>
-                        <span class="skill-tag">C#</span>
-                        <span class="skill-tag">JavaScript</span>
-                        <span class="skill-tag">TypeScript</span>
-                        <span class="skill-tag">HTML/CSS</span>
-                    </div>
-                </div>
-
-                <div class="skill-category">
-                    <div class="skill-header">
-                        <i class="fas fa-brain"></i>
-                        <h3>AI/ML & GenAI</h3>
-                    </div>
-                    <div class="skill-tags">
-                        <span class="skill-tag">PyTorch</span>
-                        <span class="skill-tag">TensorFlow</span>
-                        <span class="skill-tag">Scikit-learn</span>
-                        <span class="skill-tag">Hugging Face</span>
-                        <span class="skill-tag">LLaMA 2</span>
-                        <span class="skill-tag">LangChain</span>
-                        <span class="skill-tag">RAG</span>
-                        <span class="skill-tag">LSTM/RNN</span>
-                        <span class="skill-tag">CNN</span>
-                        <span class="skill-tag">YOLO</span>
-                        <span class="skill-tag">OpenAI APIs</span>
-                    </div>
-                </div>
-
-                <div class="skill-category">
-                    <div class="skill-header">
-                        <i class="fas fa-database"></i>
-                        <h3>Data Engineering</h3>
-                    </div>
-                    <div class="skill-tags">
-                        <span class="skill-tag">dbt</span>
-                        <span class="skill-tag">Apache Spark</span>
-                        <span class="skill-tag">Hadoop</span>
-                        <span class="skill-tag">Kafka</span>
-                        <span class="skill-tag">Snowflake</span>
-                        <span class="skill-tag">Airflow</span>
-                        <span class="skill-tag">Informatica</span>
-                        <span class="skill-tag">Pinecone</span>
-                    </div>
-                </div>
-
-                <div class="skill-category">
-                    <div class="skill-header">
-                        <i class="fas fa-cloud"></i>
-                        <h3>Cloud & DevOps</h3>
-                    </div>
-                    <div class="skill-tags">
-                        <span class="skill-tag">AWS (SageMaker, Bedrock, Lambda, EC2, S3)</span>
-                        <span class="skill-tag">Azure (Functions, Storage, Key Vault)</span>
-                        <span class="skill-tag">Docker</span>
-                        <span class="skill-tag">Kubernetes</span>
-                        <span class="skill-tag">AWS CDK</span>
-                        <span class="skill-tag">Git/GitHub Actions</span>
+                    <div class="skill-bars-container">
+                        <div class="skill-bars-panel active" id="panel-languages">
+                            <div class="skill-bar-item"><span class="sb-label">Python</span><div class="sb-track"><div class="sb-fill" data-pct="95"></div></div><span class="sb-pct">95%</span></div>
+                            <div class="skill-bar-item"><span class="sb-label">SQL</span><div class="sb-track"><div class="sb-fill" data-pct="92"></div></div><span class="sb-pct">92%</span></div>
+                            <div class="skill-bar-item"><span class="sb-label">JavaScript / TypeScript</span><div class="sb-track"><div class="sb-fill" data-pct="78"></div></div><span class="sb-pct">78%</span></div>
+                            <div class="skill-bar-item"><span class="sb-label">C# / .NET</span><div class="sb-track"><div class="sb-fill" data-pct="72"></div></div><span class="sb-pct">72%</span></div>
+                            <div class="skill-bar-item"><span class="sb-label">C / C++</span><div class="sb-track"><div class="sb-fill" data-pct="70"></div></div><span class="sb-pct">70%</span></div>
+                            <div class="skill-bar-item"><span class="sb-label">HTML / CSS</span><div class="sb-track"><div class="sb-fill" data-pct="83"></div></div><span class="sb-pct">83%</span></div>
+                        </div>
+                        <div class="skill-bars-panel" id="panel-aiml">
+                            <div class="skill-bar-item"><span class="sb-label">PyTorch / TensorFlow</span><div class="sb-track"><div class="sb-fill" data-pct="90"></div></div><span class="sb-pct">90%</span></div>
+                            <div class="skill-bar-item"><span class="sb-label">OpenAI APIs / LLMs</span><div class="sb-track"><div class="sb-fill" data-pct="92"></div></div><span class="sb-pct">92%</span></div>
+                            <div class="skill-bar-item"><span class="sb-label">LangChain / RAG</span><div class="sb-track"><div class="sb-fill" data-pct="88"></div></div><span class="sb-pct">88%</span></div>
+                            <div class="skill-bar-item"><span class="sb-label">Hugging Face</span><div class="sb-track"><div class="sb-fill" data-pct="86"></div></div><span class="sb-pct">86%</span></div>
+                            <div class="skill-bar-item"><span class="sb-label">Scikit-learn</span><div class="sb-track"><div class="sb-fill" data-pct="91"></div></div><span class="sb-pct">91%</span></div>
+                            <div class="skill-bar-item"><span class="sb-label">Computer Vision (YOLO, CNN)</span><div class="sb-track"><div class="sb-fill" data-pct="82"></div></div><span class="sb-pct">82%</span></div>
+                        </div>
+                        <div class="skill-bars-panel" id="panel-dataeng">
+                            <div class="skill-bar-item"><span class="sb-label">Snowflake</span><div class="sb-track"><div class="sb-fill" data-pct="92"></div></div><span class="sb-pct">92%</span></div>
+                            <div class="skill-bar-item"><span class="sb-label">dbt</span><div class="sb-track"><div class="sb-fill" data-pct="88"></div></div><span class="sb-pct">88%</span></div>
+                            <div class="skill-bar-item"><span class="sb-label">Apache Spark / Hadoop</span><div class="sb-track"><div class="sb-fill" data-pct="80"></div></div><span class="sb-pct">80%</span></div>
+                            <div class="skill-bar-item"><span class="sb-label">Pinecone / Vector DBs</span><div class="sb-track"><div class="sb-fill" data-pct="86"></div></div><span class="sb-pct">86%</span></div>
+                            <div class="skill-bar-item"><span class="sb-label">Airflow</span><div class="sb-track"><div class="sb-fill" data-pct="78"></div></div><span class="sb-pct">78%</span></div>
+                            <div class="skill-bar-item"><span class="sb-label">Kafka</span><div class="sb-track"><div class="sb-fill" data-pct="73"></div></div><span class="sb-pct">73%</span></div>
+                        </div>
+                        <div class="skill-bars-panel" id="panel-cloud">
+                            <div class="skill-bar-item"><span class="sb-label">AWS (Bedrock, Lambda, ECS, S3)</span><div class="sb-track"><div class="sb-fill" data-pct="93"></div></div><span class="sb-pct">93%</span></div>
+                            <div class="skill-bar-item"><span class="sb-label">Azure (Functions, Key Vault)</span><div class="sb-track"><div class="sb-fill" data-pct="82"></div></div><span class="sb-pct">82%</span></div>
+                            <div class="skill-bar-item"><span class="sb-label">AWS CDK / IaC</span><div class="sb-track"><div class="sb-fill" data-pct="85"></div></div><span class="sb-pct">85%</span></div>
+                            <div class="skill-bar-item"><span class="sb-label">Docker / Kubernetes</span><div class="sb-track"><div class="sb-fill" data-pct="80"></div></div><span class="sb-pct">80%</span></div>
+                            <div class="skill-bar-item"><span class="sb-label">GitHub Actions / CI/CD</span><div class="sb-track"><div class="sb-fill" data-pct="82"></div></div><span class="sb-pct">82%</span></div>
+                        </div>
+                        <div class="skill-bars-panel" id="panel-analytics">
+                            <div class="skill-bar-item"><span class="sb-label">Amazon QuickSight</span><div class="sb-track"><div class="sb-fill" data-pct="90"></div></div><span class="sb-pct">90%</span></div>
+                            <div class="skill-bar-item"><span class="sb-label">Tableau</span><div class="sb-track"><div class="sb-fill" data-pct="85"></div></div><span class="sb-pct">85%</span></div>
+                            <div class="skill-bar-item"><span class="sb-label">Power BI</span><div class="sb-track"><div class="sb-fill" data-pct="82"></div></div><span class="sb-pct">82%</span></div>
+                            <div class="skill-bar-item"><span class="sb-label">Grafana</span><div class="sb-track"><div class="sb-fill" data-pct="85"></div></div><span class="sb-pct">85%</span></div>
+                            <div class="skill-bar-item"><span class="sb-label">A/B Testing & Stat Modeling</span><div class="sb-track"><div class="sb-fill" data-pct="80"></div></div><span class="sb-pct">80%</span></div>
+                        </div>
                     </div>
                 </div>
 
-                <div class="skill-category">
-                    <div class="skill-header">
-                        <i class="fas fa-chart-line"></i>
-                        <h3>Analytics & Visualization</h3>
-                    </div>
-                    <div class="skill-tags">
-                        <span class="skill-tag">Amazon QuickSight</span>
-                        <span class="skill-tag">Tableau</span>
-                        <span class="skill-tag">Power BI</span>
-                        <span class="skill-tag">Grafana</span>
-                        <span class="skill-tag">A/B Testing</span>
-                        <span class="skill-tag">Statistical Modeling</span>
+                <!-- Right: Radar Chart -->
+                <div class="skills-right">
+                    <div class="radar-container">
+                        <h3 class="radar-title">Proficiency Overview</h3>
+                        <svg id="radar-chart" viewBox="0 0 300 280" xmlns="http://www.w3.org/2000/svg"></svg>
+                        <div class="radar-legend">
+                            <div class="radar-leg-item"><span class="rl-dot" style="background:#C8963E"></span>Languages</div>
+                            <div class="radar-leg-item"><span class="rl-dot" style="background:#2D6A8C"></span>AI / ML</div>
+                            <div class="radar-leg-item"><span class="rl-dot" style="background:#3A6B1E"></span>Data Eng</div>
+                            <div class="radar-leg-item"><span class="rl-dot" style="background:#8B5A2B"></span>Cloud</div>
+                            <div class="radar-leg-item"><span class="rl-dot" style="background:#6B3A8C"></span>Analytics</div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -403,53 +505,73 @@
         <div class="container">
             <h2 class="section-title">Recommendations</h2>
             <div class="recommendations-grid">
+
+                <!-- Mahizhan Jayavelu -->
                 <div class="recommendation-card">
-                    <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
-                    <p class="recommendation-text">"Kathy demonstrated exceptional technical skills and problem-solving abilities during her internship. Her work on the AI-powered analytics platform reduced query time significantly and improved data accessibility across teams."</p>
-                    <div class="recommender">
-                        <div class="recommender-avatar">SJ</div>
-                        <div class="recommender-info">
-                            <h4>Sarah Johnson</h4>
-                            <p>Senior Data Science Manager</p>
+                    <div class="rec-header">
+                        <div class="rec-avatar" style="background:linear-gradient(135deg,#FF9900,#e07000)">MJ</div>
+                        <div class="rec-meta">
+                            <h4>Mahizhan Jayavelu</h4>
+                            <p class="rec-title">Data Engineering / Analytics Manager</p>
+                            <div class="rec-company-row">
+                                <svg class="rec-company-logo" viewBox="0 0 90 22" xmlns="http://www.w3.org/2000/svg">
+                                    <text x="0" y="17" font-family="Georgia,serif" font-size="17" font-weight="bold" fill="#FF9900">amazon</text>
+                                    <path d="M8 21 Q45 26 74 20" stroke="#FF9900" fill="none" stroke-width="1.8" stroke-linecap="round"/>
+                                    <polygon points="72,18 76,20 72,22" fill="#FF9900"/>
+                                </svg>
+                                <span class="rec-relation">· Senior, not direct manager</span>
+                            </div>
+                            <p class="rec-date">November 2025</p>
                         </div>
                     </div>
+                    <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
+                    <p class="recommendation-text">Kathy emerged as an outstanding talent in our Business Intelligence Engineering team. In just three months, she accomplished what typically takes much longer — developing a sophisticated AI-powered analytics solution that showcased exceptional technical depth across AI, data engineering, and business intelligence domains. Her rapid skill acquisition and ability to collaborate effectively across teams were remarkable. What particularly impressed me was her commitment to Amazon's core principles: she not only delivered a technically superior solution but also ensured comprehensive documentation and scalability. Kathy demonstrated maturity beyond her experience level, consistently making data-driven decisions and maintaining a strong customer focus throughout the project lifecycle. Her work significantly improved our team's operational efficiency and set new standards for intern projects. I'm confident Kathy will continue to excel as a technical leader, driving innovation and delivering exceptional value in her future endeavors.</p>
                 </div>
 
+                <!-- Shruthi Saxena -->
                 <div class="recommendation-card">
-                    <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
-                    <p class="recommendation-text">"Working with Kathy on the RAG pipeline project was impressive. She has deep understanding of LLM technologies and knows how to architect production-ready solutions. A valuable asset to any data science team."</p>
-                    <div class="recommender">
-                        <div class="recommender-avatar">MC</div>
-                        <div class="recommender-info">
-                            <h4>Michael Chen</h4>
-                            <p>Principal ML Engineer</p>
+                    <div class="rec-header">
+                        <div class="rec-avatar" style="background:linear-gradient(135deg,#FF9900,#c45000)">SS</div>
+                        <div class="rec-meta">
+                            <h4>Shruthi Saxena</h4>
+                            <p class="rec-title">Scalable, Data-Driven Product Strategy @ Amazon</p>
+                            <div class="rec-company-row">
+                                <svg class="rec-company-logo" viewBox="0 0 90 22" xmlns="http://www.w3.org/2000/svg">
+                                    <text x="0" y="17" font-family="Georgia,serif" font-size="17" font-weight="bold" fill="#FF9900">amazon</text>
+                                    <path d="M8 21 Q45 26 74 20" stroke="#FF9900" fill="none" stroke-width="1.8" stroke-linecap="round"/>
+                                    <polygon points="72,18 76,20 72,22" fill="#FF9900"/>
+                                </svg>
+                                <span class="rec-relation">· Rufus · Alexa Shopping · Direct Manager</span>
+                            </div>
+                            <p class="rec-date">November 2025</p>
                         </div>
                     </div>
+                    <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
+                    <p class="recommendation-text">I had the pleasure of supervising Kathy during her internship as a Business Intelligence Engineer at Amazon, where her performance was truly exceptional — demonstrating capabilities well beyond typical intern expectations. She independently architected and delivered an innovative analytics platform that seamlessly combined advanced AI technologies with enterprise-grade security measures. What set Kathy apart was her ability to balance deep technical expertise with strong business acumen. She developed an intuitive solution that democratized data access while maintaining comprehensive documentation and robust implementation standards. Her work significantly improved team efficiency by reducing analysis time and enabling product managers to become data-independent. Her project management skills, attention to detail, and consistent focus on customer needs resulted in a production-ready solution with clear scaling potential. Any organization would be fortunate to have Kathy — she is not just a skilled engineer but a promising future leader in the data and AI space.</p>
                 </div>
 
+                <!-- Andrew Einspanier -->
                 <div class="recommendation-card">
-                    <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
-                    <p class="recommendation-text">"Kathy's ability to bridge the gap between complex analytics and business needs is remarkable. She built user-friendly tools that empowered non-technical stakeholders to make data-driven decisions independently."</p>
-                    <div class="recommender">
-                        <div class="recommender-avatar">PP</div>
-                        <div class="recommender-info">
-                            <h4>Priya Patel</h4>
-                            <p>Product Manager</p>
+                    <div class="rec-header">
+                        <div class="rec-avatar" style="background:linear-gradient(135deg,#E8622A,#b03f10)">AE</div>
+                        <div class="rec-meta">
+                            <h4>Andrew Einspanier</h4>
+                            <p class="rec-title">Data & Analytics Engineer</p>
+                            <div class="rec-company-row">
+                                <svg class="rec-company-logo" viewBox="0 0 70 22" xmlns="http://www.w3.org/2000/svg">
+                                    <circle cx="10" cy="11" r="8" fill="#E8622A"/>
+                                    <text x="6" y="15" font-family="Arial" font-size="10" font-weight="bold" fill="white">F</text>
+                                    <text x="23" y="16" font-family="Georgia,serif" font-size="14" font-weight="bold" fill="#E8622A">Fetch</text>
+                                </svg>
+                                <span class="rec-relation">· Building Data Infra for BI & AI · Direct Manager</span>
+                            </div>
+                            <p class="rec-date">August 2025</p>
                         </div>
                     </div>
+                    <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
+                    <p class="recommendation-text">I had the distinct pleasure of mentoring Kathy during her time at Fetch as an Analytics Engineer Intern. Kathy is an enthusiastic, curious, and determined engineer with an impressive ability to navigate high-context, complex, and ambiguous problems. After coaching her for just a few weeks, I watched her gain the confidence to work directly with Lead Engineers — taking their feedback and immediately applying it to improve her projects and initiatives. She is passionate about artificial intelligence and deeply in tune with industry standards and tooling. Our team particularly enjoyed exchanging knowledge with her in the realm of LLMs and Data Science. I am confident Kathy will do great things in her career — if you can convince her to join your team, you would be lucky to have her.</p>
                 </div>
 
-                <div class="recommendation-card">
-                    <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
-                    <p class="recommendation-text">"Outstanding work ethic and collaborative spirit. Kathy's contributions to our cloud infrastructure and data pipeline architecture were instrumental in scaling our analytics capabilities. Highly recommended."</p>
-                    <div class="recommender">
-                        <div class="recommender-avatar">DR</div>
-                        <div class="recommender-info">
-                            <h4>David Rodriguez</h4>
-                            <p>Engineering Lead</p>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
     </section>
@@ -467,8 +589,7 @@
                             <i class="fas fa-envelope"></i>
                             <div>
                                 <h4>Email</h4>
-                                <a href="mailto:kathy.jessica2000@gmail.com">kathy.jessica2000@gmail.com</a>
-                                <br>
+                                <a href="mailto:kathy.jessica2000@gmail.com">kathy.jessica2000@gmail.com</a><br>
                                 <a href="mailto:kpaul23@wisc.edu">kpaul23@wisc.edu</a>
                             </div>
                         </div>
@@ -500,7 +621,7 @@
     <footer class="footer">
         <div class="container">
             <p>&copy; 2026 Kathy Jessica Paul. All rights reserved.</p>
-            <p>Built with <i class="fas fa-heart"></i> using HTML, CSS, and JavaScript</p>
+            <p>Built with <i class="fas fa-heart"></i> — HTML, CSS & JavaScript</p>
         </div>
     </footer>
 
