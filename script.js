@@ -17,172 +17,243 @@ navLinks.forEach(link => {
 
 // ===== NAVBAR SCROLL EFFECT =====
 const navbar = document.getElementById('navbar');
-let lastScroll = 0;
 
 window.addEventListener('scroll', () => {
-    const currentScroll = window.pageYOffset;
-    
-    if (currentScroll > 100) {
+    if (window.pageYOffset > 80) {
         navbar.classList.add('scrolled');
     } else {
         navbar.classList.remove('scrolled');
     }
-    
-    lastScroll = currentScroll;
 });
 
-// ===== SMOOTH SCROLL FOR NAVIGATION LINKS =====
+// ===== SMOOTH SCROLL =====
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
+    anchor.addEventListener('click', function(e) {
         e.preventDefault();
         const target = document.querySelector(this.getAttribute('href'));
         if (target) {
-            const offsetTop = target.offsetTop - 80;
-            window.scrollTo({
-                top: offsetTop,
-                behavior: 'smooth'
-            });
+            window.scrollTo({ top: target.offsetTop - 80, behavior: 'smooth' });
         }
     });
 });
 
-// ===== INTERSECTION OBSERVER FOR FADE-IN ANIMATIONS =====
-const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -100px 0px'
-};
-
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.style.opacity = '1';
-            entry.target.style.transform = 'translateY(0)';
-        }
-    });
-}, observerOptions);
-
-// Animate elements on scroll
-const animateOnScroll = document.querySelectorAll(
-    '.education-card, .timeline-item, .project-card, .skill-category, .recommendation-card, .contact-item'
-);
-
-animateOnScroll.forEach(el => {
-    el.style.opacity = '0';
-    el.style.transform = 'translateY(30px)';
-    el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-    observer.observe(el);
-});
-
-// ===== ACTIVE NAVIGATION LINK HIGHLIGHTING =====
+// ===== ACTIVE NAV LINK =====
 const sections = document.querySelectorAll('section[id]');
-
 window.addEventListener('scroll', () => {
     let current = '';
     sections.forEach(section => {
-        const sectionTop = section.offsetTop;
-        const sectionHeight = section.clientHeight;
-        if (pageYOffset >= sectionTop - 200) {
+        if (window.pageYOffset >= section.offsetTop - 200) {
             current = section.getAttribute('id');
         }
     });
-
     navLinks.forEach(link => {
         link.classList.remove('active');
-        if (link.getAttribute('href') === `#${current}`) {
-            link.classList.add('active');
-        }
+        if (link.getAttribute('href') === `#${current}`) link.classList.add('active');
     });
 });
 
-// ===== SKILL TAGS ANIMATION =====
-const skillTags = document.querySelectorAll('.skill-tag');
+// ===== INTERSECTION OBSERVER — SCROLL ANIMATIONS =====
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+        }
+    });
+}, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
 
-skillTags.forEach((tag, index) => {
-    tag.style.animationDelay = `${index * 0.05}s`;
+document.querySelectorAll(
+    '.education-card, .timeline-item, .project-card, .recommendation-card, .contact-item'
+).forEach(el => {
+    el.classList.add('animate-in');
+    observer.observe(el);
 });
 
-// ===== TYPING EFFECT FOR HERO SUBTITLE (Optional Enhancement) =====
-const heroSubtitle = document.querySelector('.hero-subtitle');
-if (heroSubtitle) {
-    const text = heroSubtitle.textContent;
-    heroSubtitle.textContent = '';
-    let i = 0;
-    
-    function typeWriter() {
-        if (i < text.length) {
-            heroSubtitle.textContent += text.charAt(i);
-            i++;
-            setTimeout(typeWriter, 100);
-        }
+// ===== SKILLS INTERACTIVE DASHBOARD =====
+
+// Skill data for the radar chart
+const radarData = {
+    labels: ['Languages', 'AI / ML', 'Data Eng', 'Cloud', 'Analytics'],
+    values: [0.82, 0.90, 0.85, 0.85, 0.84],   // 0–1 scale
+    colors: ['#C8963E', '#2D6A8C', '#3A6B1E', '#8B5A2B', '#6B3A8C']
+};
+
+// Render SVG Radar Chart
+function renderRadarChart() {
+    const svg = document.getElementById('radar-chart');
+    if (!svg) return;
+
+    const cx = 150, cy = 140, R = 100;
+    const levels = 5;
+    const n = radarData.labels.length;
+
+    svg.innerHTML = '';
+
+    function polarToCart(angle, r) {
+        const rad = (angle - 90) * Math.PI / 180;
+        return { x: cx + r * Math.cos(rad), y: cy + r * Math.sin(rad) };
     }
-    
-    // Start typing after page load
-    setTimeout(typeWriter, 500);
+
+    // Draw grid rings
+    for (let l = 1; l <= levels; l++) {
+        const r = (R / levels) * l;
+        const pts = Array.from({ length: n }, (_, i) => {
+            const p = polarToCart((360 / n) * i, r);
+            return `${p.x},${p.y}`;
+        }).join(' ');
+        const poly = document.createElementNS('http://www.w3.org/2000/svg', 'polygon');
+        poly.setAttribute('points', pts);
+        poly.setAttribute('fill', 'none');
+        poly.setAttribute('stroke', l === levels ? '#C8963E' : '#EDE5D8');
+        poly.setAttribute('stroke-width', l === levels ? '1.5' : '1');
+        svg.appendChild(poly);
+    }
+
+    // Draw axes
+    for (let i = 0; i < n; i++) {
+        const angle = (360 / n) * i;
+        const end = polarToCart(angle, R);
+        const line = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+        line.setAttribute('x1', cx); line.setAttribute('y1', cy);
+        line.setAttribute('x2', end.x); line.setAttribute('y2', end.y);
+        line.setAttribute('stroke', '#EDE5D8');
+        line.setAttribute('stroke-width', '1');
+        svg.appendChild(line);
+    }
+
+    // Draw data polygon
+    const dataPoints = radarData.values.map((v, i) => {
+        const p = polarToCart((360 / n) * i, v * R);
+        return `${p.x},${p.y}`;
+    }).join(' ');
+
+    const fill = document.createElementNS('http://www.w3.org/2000/svg', 'polygon');
+    fill.setAttribute('points', dataPoints);
+    fill.setAttribute('fill', 'rgba(200,150,62,0.18)');
+    fill.setAttribute('stroke', '#C8963E');
+    fill.setAttribute('stroke-width', '2');
+    svg.appendChild(fill);
+
+    // Draw data dots + colored per axis
+    radarData.values.forEach((v, i) => {
+        const p = polarToCart((360 / n) * i, v * R);
+        const dot = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+        dot.setAttribute('cx', p.x); dot.setAttribute('cy', p.y);
+        dot.setAttribute('r', '5');
+        dot.setAttribute('fill', radarData.colors[i]);
+        dot.setAttribute('stroke', 'white');
+        dot.setAttribute('stroke-width', '2');
+        svg.appendChild(dot);
+    });
+
+    // Labels
+    radarData.labels.forEach((label, i) => {
+        const angle = (360 / n) * i;
+        const labelR = R + 22;
+        const p = polarToCart(angle, labelR);
+
+        const text = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+        text.setAttribute('x', p.x);
+        text.setAttribute('y', p.y + 4);
+        text.setAttribute('text-anchor', 'middle');
+        text.setAttribute('dominant-baseline', 'middle');
+        text.setAttribute('fill', '#1A2B4A');
+        text.setAttribute('font-size', '11');
+        text.setAttribute('font-family', 'DM Sans, sans-serif');
+        text.setAttribute('font-weight', '600');
+        text.textContent = label;
+        svg.appendChild(text);
+    });
+
+    // Center label
+    const centerText = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+    centerText.setAttribute('x', cx);
+    centerText.setAttribute('y', cy);
+    centerText.setAttribute('text-anchor', 'middle');
+    centerText.setAttribute('dominant-baseline', 'middle');
+    centerText.setAttribute('fill', '#C8963E');
+    centerText.setAttribute('font-size', '10');
+    centerText.setAttribute('font-family', 'Cormorant Garamond, serif');
+    centerText.setAttribute('font-style', 'italic');
+    centerText.textContent = 'KJ';
+    svg.appendChild(centerText);
+}
+
+// Skill Tab Switching
+function initSkillTabs() {
+    const tabs = document.querySelectorAll('.skill-tab');
+    const panels = document.querySelectorAll('.skill-bars-panel');
+
+    tabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+            // Update tabs
+            tabs.forEach(t => t.classList.remove('active'));
+            tab.classList.add('active');
+
+            // Update panels
+            const category = tab.dataset.category;
+            panels.forEach(p => p.classList.remove('active'));
+            const panel = document.getElementById(`panel-${category}`);
+            if (panel) {
+                panel.classList.add('active');
+                animateBarsInPanel(panel);
+            }
+        });
+    });
+
+    // Animate bars when skills section enters view
+    const skillsSection = document.getElementById('skills');
+    const skillsObserver = new IntersectionObserver((entries) => {
+        if (entries[0].isIntersecting) {
+            const activePanel = document.querySelector('.skill-bars-panel.active');
+            if (activePanel) animateBarsInPanel(activePanel);
+            skillsObserver.disconnect();
+        }
+    }, { threshold: 0.3 });
+    if (skillsSection) skillsObserver.observe(skillsSection);
+}
+
+function animateBarsInPanel(panel) {
+    const fills = panel.querySelectorAll('.sb-fill');
+    fills.forEach((fill, i) => {
+        const pct = fill.dataset.pct || 0;
+        fill.style.width = '0%';
+        setTimeout(() => {
+            fill.style.width = `${pct}%`;
+        }, i * 80 + 50);
+    });
 }
 
 // ===== PROJECT CARDS TILT EFFECT =====
-const projectCards = document.querySelectorAll('.project-card');
-
-projectCards.forEach(card => {
+document.querySelectorAll('.project-card').forEach(card => {
     card.addEventListener('mousemove', (e) => {
         const rect = card.getBoundingClientRect();
         const x = e.clientX - rect.left;
         const y = e.clientY - rect.top;
-        
-        const centerX = rect.width / 2;
-        const centerY = rect.height / 2;
-        
-        const rotateX = (y - centerY) / 20;
-        const rotateY = (centerX - x) / 20;
-        
-        card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-10px)`;
+        const cx = rect.width / 2;
+        const cy = rect.height / 2;
+        const rotX = (y - cy) / 25;
+        const rotY = (cx - x) / 25;
+        card.style.transform = `perspective(800px) rotateX(${rotX}deg) rotateY(${rotY}deg) translateY(-8px)`;
     });
-    
     card.addEventListener('mouseleave', () => {
-        card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) translateY(0)';
+        card.style.transform = '';
     });
 });
 
-// ===== TECH TAGS HOVER EFFECT =====
-const techTags = document.querySelectorAll('.tech-tags span, .project-tech span');
-
-techTags.forEach(tag => {
-    tag.addEventListener('mouseenter', function() {
-        this.style.transform = 'scale(1.1)';
-    });
-    
-    tag.addEventListener('mouseleave', function() {
-        this.style.transform = 'scale(1)';
-    });
-});
-
-// ===== TIMELINE ITEMS STAGGER ANIMATION =====
-const timelineItems = document.querySelectorAll('.timeline-item');
-
-timelineItems.forEach((item, index) => {
-    item.style.animationDelay = `${index * 0.2}s`;
-});
-
-// ===== PARALLAX EFFECT FOR HERO SECTION =====
+// ===== PARALLAX HERO =====
 window.addEventListener('scroll', () => {
     const scrolled = window.pageYOffset;
     const heroContent = document.querySelector('.hero-content');
-    const heroImage = document.querySelector('.hero-image');
-    
-    if (heroContent) {
-        heroContent.style.transform = `translateY(${scrolled * 0.5}px)`;
-    }
-    if (heroImage) {
-        heroImage.style.transform = `translateY(${scrolled * 0.3}px)`;
+    if (heroContent && scrolled < window.innerHeight) {
+        heroContent.style.transform = `translateY(${scrolled * 0.18}px)`;
     }
 });
 
-// ===== PRELOADER (Optional) =====
+// ===== INIT =====
 window.addEventListener('load', () => {
+    renderRadarChart();
+    initSkillTabs();
     document.body.classList.add('loaded');
+    console.log('%c✦ Kathy Jessica Paul — Data Scientist & AI Engineer', 'font-size:14px; color:#C8963E; font-weight:bold;');
+    console.log('%c📧 kathy.jessica2000@gmail.com', 'font-size:12px; color:#1A2B4A;');
 });
-
-// ===== CONSOLE MESSAGE =====
-console.log('%c👋 Welcome to my portfolio!', 'font-size: 20px; color: #6366f1; font-weight: bold;');
-console.log('%cLooking for a Data Scientist? Let\'s connect!', 'font-size: 14px; color: #8b5cf6;');
-console.log('%c📧 kathy.jessica2000@gmail.com', 'font-size: 12px; color: #ec4899;');
